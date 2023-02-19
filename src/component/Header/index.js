@@ -1,17 +1,11 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
-import useStyles from "./styles";
+import { Typography } from "@mui/material";
+import { HeaderBlog } from "./styles";
 export default function Header() {
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
-    <Typography
-      variant="h4"
-      component="div"
-      align="center"
-      container
-      className={classes.container}
-    >
-      Blog
+    <Typography component="div" align="center">
+      <HeaderBlog>Blog</HeaderBlog>
     </Typography>
   );
 }

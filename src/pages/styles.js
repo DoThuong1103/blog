@@ -1,12 +1,10 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { styled } from "@mui/system";
 
-export default makeStyles((theme) => ({
-  fab: {
-    position: "fixed",
-    bottom: theme.spacing(2),
-    right: theme.spacing(16),
-  },
-  top: {
-    marginTop: "150px",
-  },
-}));
+export const IconAdd = styled("div")({
+  position: "fixed",
+  bottom: "2px",
+  right: "16px",
+});
+export const Home = styled("div")({
+  position: "relative",
+});

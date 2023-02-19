@@ -1,7 +1,5 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { styled } from "@mui/system";
 
-export default makeStyles((theme) => ({
-  top: {
-    marginTop: "80px",
-  },
-}));
+export const PostListCss = styled("div")({
+  marginTop: "80px",
+});

@@ -1,7 +1,5 @@
-import { makeStyles } from "@material-ui/core";
+import { styled } from "@mui/system";
 
-export default makeStyles(() => ({
-  media: {
-    height: 150,
-  },
-}));
+export const MediaStyle = styled("div")({
+  height: 150,
+});

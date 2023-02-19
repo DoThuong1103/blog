@@ -9,16 +9,16 @@ import {
   CardMedia,
   IconButton,
   Typography,
-} from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
-import FavoriteIcon from "@material-ui/icons/Favorite";
+} from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import moment from "moment";
 import { useDispatch } from "react-redux";
 import { deletePost, updatePost } from "../../../redux/actions";
-import useStyle from "./style";
 
-export default function Post({ post, posts }) {
-  const classes = useStyle();
+import { MediaStyle } from "./style";
+
+export default function Post({ post }) {
   const dispatch = useDispatch();
   const onLikeBtnClick = useCallback(() => {
     dispatch(updatePost.updatePostRequest({ ...post, likeCount: post.likeCount + 1 }));
@@ -26,7 +26,11 @@ export default function Post({ post, posts }) {
   const onDeleteBtnClick = useCallback(() => {
     dispatch(deletePost.deletePostRequest(post));
   }, [dispatch, post]);
-
+  const styles = {
+    card: {
+      height: "150px",
+    },
+  };
   return (
     <Card>
       <CardHeader
@@ -39,7 +43,9 @@ export default function Post({ post, posts }) {
           </IconButton>
         }
       />
-      <CardMedia image={post.attachment} title="Image" className={classes.media} />
+
+      <CardMedia image={post.attachment} title="Image" style={styles.card} />
+
       <CardContent>
         <Typography variant="h5" color="textPrimary">
           {post.title}
