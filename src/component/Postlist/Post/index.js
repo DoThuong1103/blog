@@ -16,8 +16,6 @@ import moment from "moment";
 import { useDispatch } from "react-redux";
 import { deletePost, updatePost } from "../../../redux/actions";
 
-import { MediaStyle } from "./style";
-
 export default function Post({ post }) {
   const dispatch = useDispatch();
   const onLikeBtnClick = useCallback(() => {
